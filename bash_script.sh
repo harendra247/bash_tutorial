@@ -1,6 +1,18 @@
 #!/bin/bash 
 #!/usr/bin/env bash
 # Shebang
+# Debug d’un script bash
+# -n  Checks for syntax errors without executing the script (noexec).
+# -u  Causes an error to be thrown whenever you try to access a variable that has not been set (nounset).
+# -v  Sends all lines to standard error (stderr) as they are read, even comments.
+# -x  Turns on execution tracing (xtrace) which displays each command as it is executed.
+# -e  Causes the script to exit whenever there is an error (errexit).
+# -C Prevents the overwriting of files when using redirection (noclobber).
+# -u Causes the shell to throw an error whenever an unset variable is used (nounset).
+#    Causes a pipeline to error out if any section has an error (pipefail).
+
+set -o errexit -o pipefail -o noclobber -o nounset
+set -evx
 source ./file.sh. # source a file
 . ./file #source a file another way
 enable
