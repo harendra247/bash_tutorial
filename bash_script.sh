@@ -150,5 +150,7 @@ printf () {
 }
 
 for permanent disabling 
+Use the nop command
+The colon (:) is the nop command in BASH. It doesn't do anything. Use an environment variable and define it as either echo or :.
 printf() { :; }
 echo { :; }
