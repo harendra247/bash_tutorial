@@ -136,3 +136,19 @@ Eval command #http://mywiki.wooledge.org/BashFAQ/048
 Getopt: process command line input
 
 opts=`getopt -o a: -l apple — “$@”`
+
+Disabling echo/print in bash
+if [[ debug == "$1" ]]; then
+  NO_DEBUGING=yes  # any non-null will do
+  shift
+fi
+echo () {
+  [[ "$NO_DEBUGING" ]] && builtin echo $@
+}
+printf () {
+  [[ "$NO_DEBUGING" ]] && builtin printf $@
+}
+
+for permanent disabling 
+printf() { :; }
+echo { :; }
